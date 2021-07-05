@@ -1,0 +1,9 @@
+todo_list
+picture
+covid
+weather
+guess
+currency
+xkcd
+population
+news

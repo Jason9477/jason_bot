@@ -15,11 +15,11 @@ bot = commands.Bot(command_prefix='$')
 token = os.getenv("DISCORD_BOT_TOKEN")
 
 # 從 extensions.txt 中讀取現有功能，並加入那些功能
-with open(os.path.join("..", "info", "extensions.txt"), 'r') as f:
-    for extension in f:
+
+with open("extension.txt",'r') as f:
+     for extension in f:
         # 加入功能 (直接使用 Bot method: load_extension)
         bot.load_extension(extension.strip('\n')) 
-
 # 一開始準備就緒時會觸發
 @bot.event
 async def on_ready():
