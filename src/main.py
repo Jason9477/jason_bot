@@ -46,6 +46,7 @@ async def on_message(message):
             summ+=int(_)
         await message.channel.send(summ)
     if '*' in message.content.lower() :
+        sum=1
         lis=message.content.lower().split('*')
         for _ in lis:
             summ*=int(_)
