@@ -117,7 +117,7 @@ class News(commands.Cog):
                                 await ctx.send("quit")
                                 
                         except:
-                            if str(ans3.content)=='q' or str(ans3.content)=='quit':
+                            if 'q' in str(ans3.content):
                                 await ctx.send("quit")
                                 flag2=False
                             else:
