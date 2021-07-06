@@ -37,7 +37,6 @@ async def on_message(message):
         return
     
     if "生日快樂" in str(message.content.lower()):
-
         ls.append(message.author.id)
         print(ls)
     if message.author.id!=690742477086261266 and message.author.id not in ls:
