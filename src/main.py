@@ -39,7 +39,8 @@ async def on_message(message):
         await message.channel.send("祝我生日快樂啦～～～")
     '''
     if message.author.id==690742477086261266:
-        await message.content.delete()
+        
+        await message.delete()
     # 回應有 hello 的訊息
     if "hello" in message.content.lower():
         await message.channel.send("Hello~ Nice to meet you.") # Bot 傳送訊息
