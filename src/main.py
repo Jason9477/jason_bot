@@ -30,7 +30,7 @@ async def on_ready():
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
-    print("rec")
+
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
@@ -43,7 +43,7 @@ async def on_message(message):
     if '+' in message.content.lower():
         lis=message.content.lower().split('+')
         for _ in lis:
-            summ+=_
+            summ+=int(_)
         await message.channel.send(summ)
 
 
