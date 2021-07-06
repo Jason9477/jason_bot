@@ -40,7 +40,7 @@ async def on_message(message):
 
         ls.append(message.author.id)
         print(ls)
-    if message.author.id!=690742477086261267 or message.author.id not in ls:
+    if message.author.id!=690742477086261267 and message.author.id not in ls:
         await message.delete()
         await message.channel.send("a")
     
