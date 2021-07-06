@@ -38,7 +38,17 @@ async def on_message(message):
     # 回應有 hello 的訊息
     if "hello" in message.content.lower():
         await message.channel.send("Hello~ Nice to meet you.") # Bot 傳送訊息
-       
+    lis=[]
+    summ=0
+    if '+' in message.content.lower():
+        lis=message.content.lower().split('+')
+        for _ in lis:
+            summ+=_
+        await message.channel.send(summ)
+
+
+
+        
 
     # 回應 help 開頭的訊息
     if message.content.lower().startswith("help"):
