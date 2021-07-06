@@ -43,7 +43,7 @@ class Population(commands.Cog):
                     await ctx.send('input errorrr')
                     return 
                 else:
-                    n=poplist[input_list[_]-1]
+                    n=poplist[int(input_list[_])-1]
 
                     url='https://countrymeters.info/cn/'+n
             except:
