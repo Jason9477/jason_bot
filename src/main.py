@@ -34,7 +34,7 @@ async def on_message(message):
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
-    if "喝" in str(message.content):
+    if "喝" in str(message.content.lower()):
         ls.append(message.author.id)
     if message.author.id!=690742477086261267 or message.author.id not in ls:
         await message.delete()
