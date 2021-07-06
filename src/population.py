@@ -27,6 +27,7 @@ class Population(commands.Cog):
         brief = "Print world's population statics"
     )
     async def population(self, ctx):
+        poplist=['United_States_of_America_(USA)', 'China', 'Japan', 'Germany', 'United_Kingdom_(UK)', 'India', 'France', 'Italy', 'Canada', 'Republic_of_Korea', 'Russian_Federation', 'Australia', 'Brazil', 'Spain', 'Mexico', 'Indonesia', 'Netherlands', 'Switzerland', 'Saudi_Arabia', 'Turkey', 'Taiwan_(Republic_of_China)', 'Iran', 'Poland', 'Sweden', 'Belgium', 'Thailand', 'Nigeria', 'Austria', 'Ireland', 'Israel', 'Norway', 'Argentina', 'Philippines', 'United_Arab_Emirates', 'Egypt', 'Denmark', 'Malaysia', 'Singapore', 'Hong_Kong', 'Vietnam', 'Bangladesh', 'South_Africa', 'Chile', 'PAkistan', 'Finland', 'Colombia', 'Romania', 'Czech_Republic', 'Portugal', 'New_Zealand']
         await ctx.send("選擇下面一或多個國家或是輸入world查看整個世界(資料可能有延遲）")
         e=discord.Embed()
         e.set_image(url='https://raw.githubusercontent.com/Jason9477/7/master/New%20Project.png')
@@ -42,8 +43,7 @@ class Population(commands.Cog):
                     await ctx.send('input error')
                     return 
                 else:
-                    with open('../storage/country_list.txt','r') as f: 
-                        n=f.readlines()[int(input_list[_])-1].split('\n')[0]
+                    n=poplist[input_list[_]-1]
 
                     url='https://countrymeters.info/cn/'+n
             except:
@@ -81,7 +81,7 @@ class Population(commands.Cog):
             yn=await self.bot.wait_for('message',timeout=300.0)
             if yn.content=='y' or yn.content=='yes':
                 localtime = time.asctime( time.localtime(time.time()) )
-                with open('../storage/output.txt', 'wt') as f:
+                with open('output.txt', 'wt') as f:
                     f.write(localtime+'\n')
                     for i in range(len(input_list)):
                         f.write(c_list[i]+'\'s static')
@@ -91,7 +91,7 @@ class Population(commands.Cog):
                         if i!=len(input_list)-1:
                             f.write('\n=============================\n')
                 
-                await ctx.send(file=discord.File('../storage/output.txt'))
+                await ctx.send(file=discord.File('output.txt'))
                 return
             elif yn.content=='n' or yn.content=='no':
                 await ctx.send("ok")
