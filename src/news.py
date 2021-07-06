@@ -55,7 +55,7 @@ class News(commands.Cog):
                             else:
                                 await ctx.send("input error")
                         except:
-                            if str(ans2.content)=='q' or str(ans2.content)=='quit':
+                            if 'q' in str(ans2.content):
                                 await ctx.send("quit")
                                 flag3=False
                 else:
