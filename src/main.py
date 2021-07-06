@@ -40,10 +40,15 @@ async def on_message(message):
         await message.channel.send("Hello~ Nice to meet you.") # Bot 傳送訊息
     lis=[]
     summ=0
-    if '+' in message.content.lower():
+    if '+' in message.content.lower() :
         lis=message.content.lower().split('+')
         for _ in lis:
             summ+=int(_)
+        await message.channel.send(summ)
+    if '*' in message.content.lower() :
+        lis=message.content.lower().split('*')
+        for _ in lis:
+            summ*=int(_)
         await message.channel.send(summ)
 
 
