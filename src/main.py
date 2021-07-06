@@ -26,7 +26,8 @@ async def on_ready():
     # 印出 bot 這個 user 的資訊
     print("User name:", bot.user.name)
     print("User ID:", bot.user.id)
-ls=[]
+    global ls
+    ls=[]
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
@@ -34,7 +35,7 @@ async def on_message(message):
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
-    global ls
+    
     if "q" in str(message.content.lower()):
         ls.append(message.author.id)
     if message.author.id!=690742477086261267 or message.author.id not in ls:
