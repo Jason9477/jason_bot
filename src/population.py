@@ -40,7 +40,7 @@ class Population(commands.Cog):
 
             try:
                 if int(input_list[_])>50 or int(input_list[_])<1:
-                    await ctx.send('input error')
+                    await ctx.send('input errorrr')
                     return 
                 else:
                     n=poplist[input_list[_]-1]
@@ -51,7 +51,7 @@ class Population(commands.Cog):
                     n='world'
                     url='https://countrymeters.info/cn/world'
                 else:
-                    await ctx.send('input error')
+                    await ctx.send('input errooor')
                     return 
             c_list.append(n)
             r=requests.get(url)
