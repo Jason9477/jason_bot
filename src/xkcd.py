@@ -49,6 +49,9 @@ class Xkcd(commands.Cog):
                     print('無此漫畫!!')
                     await ctx.send('Can not find this comic')
                 else:
+                    if len(multilist)>5:
+                            print('e04太多了')
+                            return
                     errcount=0
                     lst = []
                     for _ in range(multilist[0], multilist[1]+1):
@@ -78,6 +81,9 @@ class Xkcd(commands.Cog):
                         print('Can not find this comic')
                         await ctx.send('Can not find this comic')
                     else:
+                        if len(multilist)>5:
+                            print('e04太多了')
+                            return
                         r = requests.get(s+i)
                         errcount=0
                         soup = BeautifulSoup(r.text, "html.parser")
