@@ -8,17 +8,16 @@ import os
 
 # Bot object、設定指令開頭
 bot = commands.Bot(command_prefix='$')
-
+token = os.getenv("DISCORD_BOT_TOKEN")
 # 從 token.txt 中讀取 token
 # 使用 os.path.join() 在不同作業系統會以 / 或是 \ 連接路徑
 
-token = os.getenv("DISCORD_BOT_TOKEN")
-
+extensions=['todo_list','picture','covid','weather','guess','currency','xkcd','population','news']
 # 從 extensions.txt 中讀取現有功能，並加入那些功能
-with open(os.path.join("..", "info", "extensions.txt"), 'r') as f:
-    for extension in f:
-        # 加入功能 (直接使用 Bot method: load_extension)
-        bot.load_extension(extension.strip('\n')) 
+
+for _ in extensions:
+    # 加入功能 (直接使用 Bot method: load_extension)
+    bot.load_extension(_.strip('\n')) 
 
 # 一開始準備就緒時會觸發
 @bot.event
@@ -38,7 +37,7 @@ async def on_message(message):
     # 回應有 hello 的訊息
     if "hello" in message.content.lower():
         await message.channel.send("Hello~ Nice to meet you.") # Bot 傳送訊息
-        
+       
 
     # 回應 help 開頭的訊息
     if message.content.lower().startswith("help"):
