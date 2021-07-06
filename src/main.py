@@ -26,21 +26,21 @@ async def on_ready():
     # 印出 bot 這個 user 的資訊
     print("User name:", bot.user.name)
     print("User ID:", bot.user.id)
-
+ls=[]
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
-    ls=[]
+    
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
-        '''
-    if message.author.id!=690742477086261266 or message.author.id not in ls:
-        await message.channel.send("祝我生日快樂啦～～～")
-    '''
-    if message.author.id==690742477086261266:
-        
+    if "6" in message.content:
+        ls.append(message.author.id)
+    if message.author.id!=690742477086261267 or message.author.id not in ls:
         await message.delete()
+        await message.channel.send("a")
+    
+
     # 回應有 hello 的訊息
     if "hello" in message.content.lower():
         await message.channel.send("Hello~ Nice to meet you.") # Bot 傳送訊息
