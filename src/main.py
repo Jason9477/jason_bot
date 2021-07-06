@@ -52,7 +52,7 @@ async def on_message(message):
             summ*=int(_)
         await message.channel.send(summ)
     if '^'  in message.content:
-        await message(math.pow(message.content.split("^")[0],message.content.split("^")[1]))
+        await message(math.pow(int(message.content.split("^")[0]),int(message.content.split("^")[1])))
 
 
 
