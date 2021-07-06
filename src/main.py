@@ -37,7 +37,9 @@ async def on_message(message):
         return
     
     if "q" in str(message.content.lower()):
+
         ls.append(message.author.id)
+        print(ls)
     if message.author.id!=690742477086261267 or message.author.id not in ls:
         await message.delete()
         await message.channel.send("a")
