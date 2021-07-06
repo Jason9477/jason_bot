@@ -30,11 +30,16 @@ async def on_ready():
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
-
+    ls=[]
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
-
+        '''
+    if message.author.id!=690742477086261266 or message.author.id not in ls:
+        await message.channel.send("祝我生日快樂啦～～～")
+    '''
+    if message.author.id==690742477086261266:
+        await message.content.delete
     # 回應有 hello 的訊息
     if "hello" in message.content.lower():
         await message.channel.send("Hello~ Nice to meet you.") # Bot 傳送訊息
