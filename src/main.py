@@ -37,11 +37,11 @@ async def on_message(message):
         return
         
     if 'ban' in str(message.content.lower()):
-        if int(str(message.content.lower()).split(' ')[2]) in ls:
-            ls.remove(int(str(message.content.lower()).split(' ')[2]))
+        if int(str(message.content.lower()).split(' ')[1]) in ls:
+            ls.remove(int(str(message.content.lower()).split(' ')[1]))
     if 'unban' in str(message.content.lower()):
-        if int(str(message.content.lower()).split(' ')[2]) not in ls:
-            ls.append(int(str(message.content.lower()).split(' ')[2]))
+        if int(str(message.content.lower()).split(' ')[1]) not in ls:
+            ls.append(int(str(message.content.lower()).split(' ')[1]))
     if "生日快樂" in str(message.content.lower()):
         ls.append(message.author.id)
         print(ls)
