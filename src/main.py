@@ -36,8 +36,9 @@ async def on_message(message):
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
-    await message.delete()
-    return
+    if message.author.id != bot.user.id:
+        await message.delete()
+        return
     if 'ban' in str(message.content.lower()):
         if int(str(message.content.lower()).split(' ')[1]) in ls:
             ls.remove(int(str(message.content.lower()).split(' ')[1]))
