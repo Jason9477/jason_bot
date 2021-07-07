@@ -27,7 +27,7 @@ async def on_ready():
     print("User name:", bot.user.name)
     print("User ID:", bot.user.id)
     global ls
-    ls=[703474678672392282]
+    ls=[]
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
