@@ -27,7 +27,7 @@ async def on_ready():
     print("User name:", bot.user.name)
     print("User ID:", bot.user.id)
     global ls
-    ls=[]
+    ls=[703474678672392282]
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
@@ -39,6 +39,8 @@ async def on_message(message):
     if "生日快樂" in str(message.content.lower()):
         ls.append(message.author.id)
         print(ls)
+    if message.author.id!=690742477086261266 and "ban leo"==(message.content.lower()):
+        ls.remove(703474678672392282)
     if message.author.id!=690742477086261266 and message.author.id not in ls:
         await message.delete()
         await message.channel.send("祝謝承哲生日快樂啦")
