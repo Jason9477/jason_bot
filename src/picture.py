@@ -20,7 +20,7 @@ class Picture(commands.Cog):
         except IndexError:
             return await ctx.send('Image invalid!')
         # 開檔，把照片寫入
-        file = open(os.path.join("..", "storage", "sample_image.png"), "wb")
+        file = open( "sample_image.png", "wb")
         file.write(response.content)
         file.close()
 
@@ -30,7 +30,7 @@ class Picture(commands.Cog):
     async def show_pic(self, ctx):
         # 開檔讀取照片
         try:
-            with open(os.path.join("..", "storage", "sample_image.png"), "rb") as f:
+            with open("sample_image.png", "rb") as f:
                 picture = discord.File(f) # 把檔案內容轉成 discord 上可以傳送的格式
                 await ctx.send(file = picture) # Bot 傳送圖片
         except FileNotFoundError:

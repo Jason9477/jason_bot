@@ -49,7 +49,7 @@ async def on_message(message):
     if message.author.id not in ls:
         await message.delete()
         await message.channel.send("祝謝承哲生日快樂啦")
-    6
+    
 
     # 回應有 hello 的訊息
     if "hello" in message.content.lower():
