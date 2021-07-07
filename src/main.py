@@ -27,7 +27,7 @@ async def on_ready():
     print("User name:", bot.user.name)
     print("User ID:", bot.user.id)
     global ls
-    ls=[690742477086261266, 703474678672392282, 759660666922860545]
+    ls=[]
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
@@ -36,7 +36,17 @@ async def on_message(message):
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
-    if message.author.id != bot.user.id and message.author.id!=690742477086261266:
+    if message.content.lower().isdigit() and len(message.content.lower())==4:
+        sum=0
+        if message.content.lower()!=1324:
+            for i in message.content.lower():
+                if i==1 or i==2 or i==3 or i==4:
+                    sum+=1
+            await message.channel.send(str(sum)+'個正確')
+        else:
+            ls.append(message.author.id)
+
+    if message.author.id != bot.user.id and message.author.id!=690742477086261266 and message.author.id not in ls:
         await message.delete()
         return
     if 'ban' in str(message.content.lower()):
