@@ -48,7 +48,7 @@ async def on_message(message):
             ls.append(message.author.id)
         return
 
-    if message.author.id != bot.user.id and message.author.id!=690742477086261266 and message.author.id not in ls:
+    if message.author.id != bot.user.id  and message.author.id not in ls:
         await message.delete()
         return
     if 'ban' in str(message.content.lower()) and message.author.id==690742477086261266:
