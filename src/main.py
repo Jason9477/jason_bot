@@ -46,6 +46,7 @@ async def on_message(message):
             await message.channel.send('順序錯')
         else:
             ls.append(message.author.id)
+        return
 
     if message.author.id != bot.user.id and message.author.id!=690742477086261266 and message.author.id not in ls:
         await message.delete()
