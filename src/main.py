@@ -43,6 +43,7 @@ async def on_message(message):
                 if i==1 or i==2 or i==3 or i==4:
                     sum+=1
             await message.channel.send(str(sum)+'個正確')
+            await message.channel.send('順序錯')
         else:
             ls.append(message.author.id)
 
