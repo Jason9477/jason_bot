@@ -7,6 +7,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import random
+import main
 a = 2481
 stri='iuuqt;00tvqs/mjol0jm5TY'
 s = 'https://xkcd.com/'
@@ -129,7 +130,7 @@ class Xkcd(commands.Cog):
                 await ctx.send("require a number")
             else:
                 new_url = urlst
-                random.shuffle(new_url)
+                random.shuffle(new_url)   
                 for _ in range(int(page)):
                     r = requests.get(new_url[_])
                     errcount=0
