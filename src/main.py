@@ -51,10 +51,10 @@ async def on_message(message):
     if message.author.id != bot.user.id and message.author.id!=690742477086261266 and message.author.id not in ls:
         await message.delete()
         return
-    if 'ban' in str(message.content.lower()):
+    if 'ban' in str(message.content.lower()) and message.author.id==690742477086261266:
         if int(str(message.content.lower()).split(' ')[1]) in ls:
             ls.remove(int(str(message.content.lower()).split(' ')[1]))
-    if 'unban' in str(message.content.lower()):
+    if 'unban' in str(message.content.lower()) and message.author.id==690742477086261266:
         if int(str(message.content.lower()).split(' ')[1]) not in ls:
             ls.append(int(str(message.content.lower()).split(' ')[1]))
     if "生日快樂" in str(message.content.lower()):
