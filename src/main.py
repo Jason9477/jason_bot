@@ -12,7 +12,7 @@ token = os.getenv("DISCORD_BOT_TOKEN")
 # 從 token.txt 中讀取 token
 # 使用 os.path.join() 在不同作業系統會以 / 或是 \ 連接路徑
 
-extensions=['todo_list','picture','covid','weather','guess','currency','xkcd','population','news','print','ban']
+extensions=['todo_list','picture','covid','weather','guess','currency','xkcd','population','news','print']
 # 從 extensions.txt 中讀取現有功能，並加入那些功能
 
 for _ in extensions:
@@ -36,7 +36,12 @@ async def on_message(message):
     if message.author.id == bot.user.id:
         return
         
-    
+    if 'ban' in str(message.content.lower()):
+        if int(str(message.content.lower()).split(' ')[2]) in ls:
+            ls.remove(int(str(message.content.lower()).split(' ')[2]))
+    if 'unban' in str(message.content.lower()):
+        if int(str(message.content.lower()).split(' ')[2]) not in ls:
+            ls.append(int(str(message.content.lower()).split(' ')[2]))
     if "生日快樂" in str(message.content.lower()):
         ls.append(message.author.id)
         print(ls)
