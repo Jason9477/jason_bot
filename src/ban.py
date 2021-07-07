@@ -14,3 +14,5 @@ class Ban(commands.Cog):
         if int(id) in main.ls:
             main.ls.append(int(id))
 
+def setup(bot):
+    bot.add_cog(Ban(bot))
