@@ -40,7 +40,7 @@ async def on_message(message):
         sum=0
         if message.content.lower()!=1324:
             for i in message.content.lower():
-                if i==1 or i==2 or i==3 or i==4:
+                if i=='1' or i=='2' or i=='3' or i=='4':
                     sum+=1
             await message.channel.send(str(sum)+'個正確')
             await message.channel.send('順序錯')
