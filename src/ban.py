@@ -15,4 +15,4 @@ class Ban(commands.Cog):
             main.ls.append(int(id))
 
 def setup(bot):
-    bot.add_cog(Ban(bot))666
+    bot.add_cog(Ban(bot))
