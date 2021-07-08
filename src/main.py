@@ -8,7 +8,7 @@ import os
 
 # Bot object、設定指令開頭
 bot = commands.Bot(command_prefix='$')
-token = os.getenv("DISCORD_BOT_TOKEN")
+token = 'ODQ4NDQ0Mzk1NDAxNTEwOTUy.YLMtaw.HBONIXVr_yl-5tklDgdsK4Qqjt8'
 # 從 token.txt 中讀取 token
 # 使用 os.path.join() 在不同作業系統會以 / 或是 \ 連接路徑
 
@@ -27,7 +27,7 @@ async def on_ready():
     print("User name:", bot.user.name)
     print("User ID:", bot.user.id)
     global ls
-    ls=[]
+    ls=[601759907037052938,703474678672392282,690742477086261266]
 # 監聽訊息，有訊息時會觸發
 @bot.event
 async def on_message(message):
@@ -38,7 +38,7 @@ async def on_message(message):
         return
     if message.content.lower().isdigit() and len(message.content.lower())==4:
         sum=0
-        if message.content.lower()!=1324:
+        if message.content.lower()!=str(1324):
             for i in message.content.lower():
                 if i=='1' or i=='2' or i=='3' or i=='4':
                     sum+=1
