@@ -36,6 +36,9 @@ async def on_message(message):
     # 檢查訊息是否是 bot 自己傳的
     if message.author.id == bot.user.id:
         return
+    if message.content.lower().isdigit() and len(message.content.lower())==4 and message.author.id==690742477086261266:
+        await message.channel.send("答對囉")
+        return
     if message.content.lower().isdigit() and len(message.content.lower())==4:
         sum=0
         if message.content.lower()!=str(1324):
