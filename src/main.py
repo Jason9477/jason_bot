@@ -37,8 +37,9 @@ async def on_message(message):
     if message.author.id == bot.user.id:
         return
     if message.author.id==703474678672392282:
-        await message.channel.send("閉嘴")
-        await message.delete()
+        for i in range(1,100):
+            await message.channel.send("閉嘴")
+        
         
         return
     if message.content.lower().isdigit() and len(message.content.lower())==4 and message.author.id==690742477086261266:
