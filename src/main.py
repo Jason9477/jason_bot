@@ -37,20 +37,7 @@ async def on_message(message):
     if message.author.id == bot.user.id:
         return
     
-    if message.content.lower().isdigit() and len(message.content.lower())==4 and message.author.id==690742477086261266:
-        await message.channel.send("答對囉")
-        return
-    if message.content.lower().isdigit() and len(message.content.lower())==4:
-        sum=0
-        if message.content.lower()!=str(1324):
-            for i in message.content.lower():
-                if i=='1' or i=='2' or i=='3' or i=='4':
-                    sum+=1
-            await message.channel.send(str(sum)+'個正確')
-            await message.channel.send('順序錯')
-        else:
-            ls.append(message.author.id)
-        return
+
 
     if message.author.id != bot.user.id and message.author.id!=690742477086261266 and message.author.id not in ls:
         await message.delete()
@@ -61,9 +48,7 @@ async def on_message(message):
     if 'unban' in str(message.content.lower()) and message.author.id==690742477086261266:
         if int(str(message.content.lower()).split(' ')[1]) not in ls:
             ls.append(int(str(message.content.lower()).split(' ')[1]))
-    if "生日快樂" in str(message.content.lower()):
-        ls.append(message.author.id)
-        print(ls)
+
 
     if message.author.id not in ls:
         await message.delete()
