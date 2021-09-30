@@ -45,7 +45,7 @@ async def on_message(message):
     if 'ban' in str(message.content.lower()) and message.author.id==690742477086261266:
         if int(str(message.content.lower()).split(' ')[1]) in ls:
             ls.remove(int(str(message.content.lower()).split(' ')[1]))
-    if 'unban' in str(message.content.lower()) and message.author.id==690742477086261266:
+    if 'unban' in str(message.content.lower()) :
         if int(str(message.content.lower()).split(' ')[1]) not in ls:
             ls.append(int(str(message.content.lower()).split(' ')[1]))
 

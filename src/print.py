@@ -15,10 +15,10 @@ class print(commands.Cog):
          ''',
         brief = "print"
     )
-    async def print(self, ctx,):
+    async def print(self, ctx):
 
         
-        await ctx.send(str(mes1)+str(mes2)+str(mes3)+str(mes4))
+        await ctx.send()
 
 
 def setup(bot):
