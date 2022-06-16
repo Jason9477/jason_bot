@@ -8,7 +8,7 @@ import os
 
 # Bot object、設定指令開頭
 bot = commands.Bot(command_prefix='$')
-token = 'ODQ4NDQ0Mzk1NDAxNTEwOTUy.YLMtaw.HBONIXVr_yl-5tklDgdsK4Qqjt8'
+token = 'YOUR_TOKEN'
 # 從 token.txt 中讀取 token
 # 使用 os.path.join() 在不同作業系統會以 / 或是 \ 連接路徑
 
